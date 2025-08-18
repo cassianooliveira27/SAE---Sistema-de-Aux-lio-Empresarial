@@ -80,6 +80,6 @@ Erro de estilização (CSS/JS) → confirme que todos os arquivos foram extraíd
 
 Página em branco → ative a exibição de erros no PHP ou verifique o log do Apache.
 
-📜 Licença
+Licença
 
 Este sistema é distribuído para fins de estudo e uso interno.
