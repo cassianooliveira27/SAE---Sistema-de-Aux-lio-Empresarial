@@ -51,7 +51,7 @@ Verifique no arquivo config.php (ou equivalente) as credenciais de conexão:
 
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "&tec77@info!";
 $db   = "sistema_empresarial";
 
 
