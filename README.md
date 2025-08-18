@@ -67,7 +67,7 @@ Abra o navegador.
 
 Acesse:
 
-http://localhost/SistemaAuxiliarEmpresarialV1/
+http://localhost/SAE/
 
 
 Faça login com as credenciais definidas no banco.
