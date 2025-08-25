@@ -20,7 +20,7 @@ Ter um navegador atualizado (Chrome, Edge, Firefox, etc.)
 
 2. Configuração do Projeto
 
-Extraia a pasta SistemaAuxiliarEmpresarialV1 do arquivo .zip.
+Extraia a pasta SAE (Beta) do arquivo .zip.
 
 Mova a pasta para o diretório do servidor local do XAMPP:
 
@@ -41,7 +41,7 @@ Crie um novo banco de dados chamado:
 sistema_empresarial
 
 
-Clique em Importar e selecione o arquivo .sql que está dentro da pasta SistemaAuxiliarEmpresarialV1.
+Clique em Importar e selecione o arquivo .sql que está dentro da pasta SAE (Beta).
 
 Confirme a importação.
 
@@ -52,7 +52,7 @@ Verifique no arquivo config.php (ou equivalente) as credenciais de conexão:
 $host = "localhost";
 $user = "root";
 $pass = "&tec77@info!";
-$db   = "sistema_empresarial";
+$db   = "sae_db";
 
 
 Usuário padrão do MySQL no XAMPP: root
@@ -67,7 +67,7 @@ Abra o navegador.
 
 Acesse:
 
-http://localhost/SAE/
+http://localhost/SAE (Beta)/
 
 
 Faça login com as credenciais definidas no banco.
