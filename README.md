@@ -3,7 +3,7 @@ O sistema permite gerenciar informações empresariais de forma prática e intui
 
 Tecnologias Utilizadas
 
-PHP (lógica de negócios e back-end)
+PHP, JS (lógica de negócios e back-end)
 
 MySQL (armazenamento de dados)
 
