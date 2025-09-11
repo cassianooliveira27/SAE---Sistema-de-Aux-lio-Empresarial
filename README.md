@@ -2,7 +2,7 @@
 
 Este projeto é um sistema auxiliar empresarial desenvolvido em PHP com MySQL, executado em ambiente local via XAMPP.
 O sistema permite gerenciar informações empresariais de forma prática e intuitiva.
-══════════════════════════════════════════════════════════════════════════════════════════════════════
+═══════════════════════════════════════
 
 Tecnologias Utilizadas
 
