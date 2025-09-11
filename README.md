@@ -5,20 +5,15 @@ O sistema permite gerenciar informações empresariais de forma prática e intui
 
 Tecnologias Utilizadas
 
-PHP, JS (lógica de negócios e back-end)
-
-MySQL (armazenamento de dados)
-
-HTML, CSS (interface do usuário e estilização)
-
-XAMPP (servidor local com Apache + MySQL)
-
+Tecnologias Utilizadas
+PHP, JavaScript — lógica de negócios e back-end
+MySQL — armazenamento de dados
+HTML, CSS — interface do usuário e estilização
+XAMPP — servidor local (Apache + MySQL)
+Requisitos
+XAMPP instalado (https://www.apachefriends.org/pt_br/index.html)
+Navegador atualizado (Chrome, Edge, Firefox, etc.)
 Instalação e Configuração
-
-Pré-requisitos
-Instalar XAMPP
-
-Ter um navegador atualizado (Chrome, Edge, Firefox, etc.)
 
 Configuração do Projeto
 Extraia a pasta SAE (Beta) do arquivo .zip.
@@ -35,9 +30,7 @@ Abra o navegador e acesse o phpMyAdmin:
 
 http://localhost/phpmyadmin/
 
-Crie um novo banco de dados chamado:
-
-sistema_empresarial
+Crie um novo banco de dados chamado: "sae_db"
 
 Clique em Importar e selecione o arquivo .sql que está dentro da pasta SAE (Beta).
 
@@ -68,14 +61,31 @@ http://localhost/SAE (Beta)/
 
 Faça login com as credenciais definidas no banco.
 
-Solução de Problemas
+Solução de Problemas Comuns
+Problema
 
-Erro de conexão com o banco → verifique se o MySQL está ativo e se as credenciais no config.php estão corretas.
+Possível Causa
 
-Erro de estilização (CSS/JS) → confirme que todos os arquivos foram extraídos corretamente dentro da pasta htdocs.
+Solução
 
-Página em branco → ative a exibição de erros no PHP ou verifique o log do Apache.
+Erro de conexão com o banco
+
+MySQL não está ativo ou credenciais erradas
+
+Verifique se o MySQL está rodando no XAMPP e confirme as credenciais no conect_bd.php.
+
+Erro de estilização (CSS/JS)
+
+Arquivos não extraídos corretamente
+
+Confirme se todos os arquivos foram extraídos para a pasta correta dentro de htdocs.
+
+Página em branco
+
+Erros PHP ocultos
+
+Ative a exibição de erros no PHP (php.ini) ou verifique o log do Apache para detalhes.
 
 Licença
-
 Este sistema é distribuído para fins de estudo e uso interno.
+Não é permitido uso comercial sem autorização.
