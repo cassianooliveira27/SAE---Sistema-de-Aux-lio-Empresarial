@@ -1,69 +1,81 @@
 ![Logo](https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial/blob/main/2024_logo_55anos_cps_gov_24-25_regua_horizontal+horizontal_cor.png?raw=true)
 
-Sistema Auxiliar Empresarial (SAE) - Beta
-Sistema desenvolvido em PHP com MySQL para gerenciamento prático e intuitivo de informações empresariais, executado em ambiente local via XAMPP.
+Este projeto é um sistema auxiliar empresarial desenvolvido em PHP com MySQL, executado em ambiente local via XAMPP.
+O sistema permite gerenciar informações empresariais de forma prática e intuitiva.
 
 Tecnologias Utilizadas
-PHP, JavaScript — lógica de negócios e back-end
-MySQL — armazenamento de dados
-HTML, CSS — interface do usuário e estilização
-XAMPP — servidor local (Apache + MySQL)
-Requisitos
-XAMPP instalado (https://www.apachefriends.org/pt_br/index.html)
-Navegador atualizado (Chrome, Edge, Firefox, etc.)
+
+PHP, JS (lógica de negócios e back-end)
+
+MySQL (armazenamento de dados)
+
+HTML, CSS (interface do usuário e estilização)
+
+XAMPP (servidor local com Apache + MySQL)
+
 Instalação e Configuração
 
-1. Preparação do Projeto
+Pré-requisitos
+Instalar XAMPP
+
+Ter um navegador atualizado (Chrome, Edge, Firefox, etc.)
+
+Configuração do Projeto
 Extraia a pasta SAE (Beta) do arquivo .zip.
-Copie ou mova a pasta para o diretório do servidor local do XAMPP:
+
+Mova a pasta para o diretório do servidor local do XAMPP:
+
 C:\xampp\htdocs\
-Inicie o painel de controle do XAMPP e ative os módulos Apache e MySQL.
 
-2. Configuração do Banco de Dados
-Acesse o phpMyAdmin pelo navegador:
+Inicie o XAMPP e ative os módulos Apache e MySQL.
+
+Banco de Dados
+
+Abra o navegador e acesse o phpMyAdmin:
+
 http://localhost/phpmyadmin/
-Crie um novo banco de dados chamado: "sae_db"
-Clique na aba Importar e selecione o arquivo .sql dentro da pasta SAE (Beta).
-Confirme a importação para criar as tabelas e dados necessários.
 
-3. Configuração da Conexão com o Banco
-Abra o arquivo conect.php (ou equivalente) e ajuste as credenciais conforme sua instalação:
-$host = "localhost";
-$user = "root";
-$pass = ""; // Senha padrão do XAMPP é vazia
-$db   = "sae_db";
+Crie um novo banco de dados chamado:
+
+sistema_empresarial
+
+Clique em Importar e selecione o arquivo .sql que está dentro da pasta SAE (Beta).
+
+Confirme a importação.
+
+Configuração da Conexão
+
+Verifique no arquivo config.php (ou equivalente) as credenciais de conexão:
+
+\$host = "localhost";
+\$user = "root";
+\$pass = "&tec77@info!";
+\$db   = "sae_db";
+
+Usuário padrão do MySQL no XAMPP: root
+
+Senha: (em branco)
+
+Se necessário, ajuste conforme sua instalação.
 
 Como Executar
+
 Abra o navegador.
-Acesse a URL:
+
+Acesse:
 
 http://localhost/SAE (Beta)/
-Faça login com as credenciais cadastradas no banco de dados.
-Solução de Problemas Comuns
-Problema
 
-Possível Causa
+Faça login com as credenciais definidas no banco.
 
-Solução
+Solução de Problemas
 
-Erro de conexão com o banco
+Erro de conexão com o banco → verifique se o MySQL está ativo e se as credenciais no config.php estão corretas.
 
-MySQL não está ativo ou credenciais erradas
+Erro de estilização (CSS/JS) → confirme que todos os arquivos foram extraídos corretamente dentro da pasta htdocs.
 
-Verifique se o MySQL está rodando no XAMPP e confirme as credenciais no config.php.
-
-Erro de estilização (CSS/JS)
-
-Arquivos não extraídos corretamente
-
-Confirme se todos os arquivos foram extraídos para a pasta correta dentro de htdocs.
-
-Página em branco
-
-Erros PHP ocultos
-
-Ative a exibição de erros no PHP (php.ini) ou verifique o log do Apache para detalhes.
+Página em branco → ative a exibição de erros no PHP ou verifique o log do Apache.
 
 Licença
+
 Este sistema é distribuído para fins de estudo e uso interno.
-Não é permitido uso comercial sem autorização.
