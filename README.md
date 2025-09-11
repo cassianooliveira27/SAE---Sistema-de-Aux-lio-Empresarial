@@ -3,6 +3,8 @@
 Este projeto é um sistema auxiliar empresarial desenvolvido em PHP com MySQL, executado em ambiente local via XAMPP.
 O sistema permite gerenciar informações empresariais de forma prática e intuitiva.
 
+![Separador](https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial/blob/main/10578808.png?raw=true)
+
 Tecnologias Utilizadas
 
 Tecnologias Utilizadas
@@ -15,10 +17,14 @@ HTML, CSS — interface do usuário e estilização
 
 XAMPP — servidor local (Apache + MySQL)
 
+![Separador](https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial/blob/main/10578808.png?raw=true)
+
 Requisitos
 XAMPP instalado (https://www.apachefriends.org/pt_br/index.html)
 
 Navegador atualizado (Chrome, Edge, Firefox, etc.)
+
+![Separador](https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial/blob/main/10578808.png?raw=true)
 
 Instalação e Configuração
 
@@ -62,6 +68,8 @@ Senha: (em branco)
 
 Se necessário, ajuste conforme sua instalação.
 
+![Separador](https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial/blob/main/10578808.png?raw=true)
+
 Como Executar
 
 Abra o navegador.
@@ -71,6 +79,8 @@ Acesse:
 http://localhost/SAE (Beta)/
 
 Faça login com as credenciais definidas no banco.
+
+![Separador](https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial/blob/main/10578808.png?raw=true)
 
 Solução de Problemas Comuns
 
@@ -97,6 +107,8 @@ Página em branco
 Erros PHP ocultos
 
 Ative a exibição de erros no PHP (php.ini) ou verifique o log do Apache para detalhes.
+
+![Separador](https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial/blob/main/10578808.png?raw=true)
 
 Licença
 Este sistema é distribuído para fins de estudo e uso interno.
