@@ -6,16 +6,24 @@ O sistema permite gerenciar informações empresariais de forma prática e intui
 Tecnologias Utilizadas
 
 Tecnologias Utilizadas
+
 PHP, JavaScript — lógica de negócios e back-end
+
 MySQL — armazenamento de dados
+
 HTML, CSS — interface do usuário e estilização
+
 XAMPP — servidor local (Apache + MySQL)
+
 Requisitos
 XAMPP instalado (https://www.apachefriends.org/pt_br/index.html)
+
 Navegador atualizado (Chrome, Edge, Firefox, etc.)
+
 Instalação e Configuração
 
 Configuração do Projeto
+
 Extraia a pasta SAE (Beta) do arquivo .zip.
 
 Mova a pasta para o diretório do servidor local do XAMPP:
@@ -41,8 +49,11 @@ Configuração da Conexão
 Verifique no arquivo config.php (ou equivalente) as credenciais de conexão:
 
 \$host = "localhost";
+
 \$user = "root";
+
 \$pass = "&tec77@info!";
+
 \$db   = "sae_db";
 
 Usuário padrão do MySQL no XAMPP: root
@@ -62,6 +73,7 @@ http://localhost/SAE (Beta)/
 Faça login com as credenciais definidas no banco.
 
 Solução de Problemas Comuns
+
 Problema
 
 Possível Causa
