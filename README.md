@@ -2,6 +2,7 @@
 
 Este projeto é um sistema auxiliar empresarial desenvolvido em PHP com MySQL, executado em ambiente local via XAMPP.
 O sistema permite gerenciar informações empresariais de forma prática e intuitiva.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 Tecnologias Utilizadas
 
@@ -15,12 +16,15 @@ HTML, CSS — interface do usuário e estilização
 
 XAMPP — servidor local (Apache + MySQL)
 
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
 
 Requisitos
 XAMPP instalado (https://www.apachefriends.org/pt_br/index.html)
 
 Navegador atualizado (Chrome, Edge, Firefox, etc.)
 
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 Instalação e Configuração
 
@@ -64,6 +68,7 @@ Senha: (em branco)
 
 Se necessário, ajuste conforme sua instalação.
 
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 Como Executar
 
@@ -75,6 +80,7 @@ http://localhost/SAE (Beta)/
 
 Faça login com as credenciais definidas no banco.
 
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 Solução de Problemas Comuns
 
@@ -101,6 +107,8 @@ Página em branco
 Erros PHP ocultos
 
 Ative a exibição de erros no PHP (php.ini) ou verifique o log do Apache para detalhes.
+
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 Licença
 Este sistema é distribuído para fins de estudo e uso interno.
