@@ -4,11 +4,9 @@ include 'header.php';
 
 $message = "";
 
-// Excluir cargo
 if (isset($_GET['excluir'])) {
     $id = intval($_GET['excluir']);
 
-    // Verifica se existem funcionários vinculados
     $check = $conn->prepare("SELECT COUNT(*) as total FROM funcionarios WHERE id_cargo=?");
     $check->bind_param("i", $id);
     $check->execute();
@@ -27,7 +25,6 @@ if (isset($_GET['excluir'])) {
     }
 }
 
-// Editar cargo
 if (isset($_GET['editar'])) {
     $id = intval($_GET['editar']);
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -153,3 +150,4 @@ $res = $conn->query($query);
 </div>
 </body>
 </html>
+
