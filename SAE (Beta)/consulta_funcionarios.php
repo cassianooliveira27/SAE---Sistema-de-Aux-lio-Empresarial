@@ -4,7 +4,6 @@ include 'header.php';
 
 $message = "";
 
-// Excluir funcionário
 if (isset($_GET['excluir'])) {
     $id = intval($_GET['excluir']);
     $stmt = $conn->prepare("DELETE FROM funcionarios WHERE id_funcionario = ?");
@@ -16,7 +15,6 @@ if (isset($_GET['excluir'])) {
     }
 }
 
-// Editar funcionário
 if (isset($_GET['editar'])) {
     $id = intval($_GET['editar']);
     $dados  = $conn->query("SELECT * FROM funcionarios WHERE id_funcionario=$id")->fetch_assoc();
@@ -77,7 +75,6 @@ if (isset($_GET['editar'])) {
 exit;
 }
 
-// Filtros
 $pesquisa     = $_GET['pesquisa'] ?? '';
 $cargo_filtro = $_GET['cargo'] ?? '';
 $sal_min      = $_GET['sal_min'] ?? 0;
@@ -199,3 +196,4 @@ $cargos = $conn->query("SELECT * FROM cargos ORDER BY nome_cargo");
 </div>
 </body>
 </html>
+
