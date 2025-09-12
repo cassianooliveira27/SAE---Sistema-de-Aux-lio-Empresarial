@@ -2,13 +2,21 @@
 require 'conect_bd.php';
 include 'header.php';
 
+$message = "";
+
+// Excluir funcionário
 if (isset($_GET['excluir'])) {
     $id = intval($_GET['excluir']);
-    $conn->query("DELETE FROM funcionarios WHERE id_funcionario = $id");
-    header("Location: consulta_funcionarios.php");
-    exit;
+    $stmt = $conn->prepare("DELETE FROM funcionarios WHERE id_funcionario = ?");
+    $stmt->bind_param("i", $id);
+    if ($stmt->execute()) {
+        $message = "<p class='message success'>✅ Funcionário excluído com sucesso!</p>";
+    } else {
+        $message = "<p class='message error'>❌ Erro ao excluir funcionário.</p>";
+    }
 }
 
+// Editar funcionário
 if (isset($_GET['editar'])) {
     $id = intval($_GET['editar']);
     $dados  = $conn->query("SELECT * FROM funcionarios WHERE id_funcionario=$id")->fetch_assoc();
@@ -21,9 +29,12 @@ if (isset($_GET['editar'])) {
 
         $stmt = $conn->prepare("UPDATE funcionarios SET nome_funcionario=?, id_cargo=?, salario=? WHERE id_funcionario=?");
         $stmt->bind_param('sidi', $nome, $id_cargo, $salario, $id);
-        $stmt->execute();
-        header("Location: consulta_funcionarios.php");
-        exit;
+        if ($stmt->execute()) {
+            header("Location: consulta_funcionarios.php?status=edit_ok");
+            exit;
+        } else {
+            $message = "<p class='message error'>❌ Erro ao editar funcionário.</p>";
+        }
     }
 ?>
 <!doctype html>
@@ -66,6 +77,7 @@ if (isset($_GET['editar'])) {
 exit;
 }
 
+// Filtros
 $pesquisa     = $_GET['pesquisa'] ?? '';
 $cargo_filtro = $_GET['cargo'] ?? '';
 $sal_min      = $_GET['sal_min'] ?? 0;
@@ -102,6 +114,9 @@ $cargos = $conn->query("SELECT * FROM cargos ORDER BY nome_cargo");
 <title>Consulta Funcionários</title>
 <link rel="stylesheet" href="style.css">
 <style>
+.message { text-align:center; font-weight:bold; margin:10px; }
+.success { color:green; }
+.error { color:red; }
 .range-container { margin: 10px 0; }
 .range-label { font-weight: bold; }
 .range-value { color: #007bff; margin-left: 5px; }
@@ -110,6 +125,11 @@ $cargos = $conn->query("SELECT * FROM cargos ORDER BY nome_cargo");
 <body>
 <div class="container">
     <h1>Consulta de Funcionários</h1>
+
+    <?php if ($message) echo $message; ?>
+    <?php if (isset($_GET['status']) && $_GET['status']=='edit_ok'): ?>
+        <p class="message success">✅ Funcionário atualizado com sucesso!</p>
+    <?php endif; ?>
 
     <form method="get" class="filtros">
         <input type="text" name="pesquisa" placeholder="Buscar por nome" value="<?=htmlspecialchars($pesquisa)?>">
