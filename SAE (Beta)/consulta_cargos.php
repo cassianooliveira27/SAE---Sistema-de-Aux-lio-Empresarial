@@ -1,14 +1,33 @@
-<?php
+<?php 
 require 'conect_bd.php';
 include 'header.php';
 
+$message = "";
+
+// Excluir cargo
 if (isset($_GET['excluir'])) {
     $id = intval($_GET['excluir']);
-    $conn->query("DELETE FROM cargos WHERE id_cargo = $id");
-    header("Location: consulta_cargos.php");
-    exit;
+
+    // Verifica se existem funcionários vinculados
+    $check = $conn->prepare("SELECT COUNT(*) as total FROM funcionarios WHERE id_cargo=?");
+    $check->bind_param("i", $id);
+    $check->execute();
+    $result = $check->get_result()->fetch_assoc();
+
+    if ($result['total'] > 0) {
+        $message = "<p class='message error'>⚠️ Não é possível excluir: existem funcionários vinculados a este cargo.</p>";
+    } else {
+        $stmt = $conn->prepare("DELETE FROM cargos WHERE id_cargo=?");
+        $stmt->bind_param("i", $id);
+        if ($stmt->execute()) {
+            $message = "<p class='message success'>✅ Cargo excluído com sucesso!</p>";
+        } else {
+            $message = "<p class='message error'>❌ Erro ao excluir cargo.</p>";
+        }
+    }
 }
 
+// Editar cargo
 if (isset($_GET['editar'])) {
     $id = intval($_GET['editar']);
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,9 +37,12 @@ if (isset($_GET['editar'])) {
         $cmax  = intval($_POST['carga_horaria_max']);
         $stmt = $conn->prepare("UPDATE cargos SET nome_cargo=?, descricao=?, salario_base=?, carga_horaria_max=? WHERE id_cargo=?");
         $stmt->bind_param('ssdii', $nome, $desc, $sal, $cmax, $id);
-        $stmt->execute();
-        header("Location: consulta_cargos.php");
-        exit;
+        if ($stmt->execute()) {
+            header("Location: consulta_cargos.php?status=edit_ok");
+            exit;
+        } else {
+            $message = "<p class='message error'>❌ Erro ao editar cargo.</p>";
+        }
     }
     $dados = $conn->query("SELECT * FROM cargos WHERE id_cargo=$id")->fetch_assoc();
     ?>
@@ -72,10 +94,20 @@ $res = $conn->query($query);
 <meta charset="utf-8">
 <title>Consulta Cargos</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.message { text-align:center; font-weight:bold; margin:10px; }
+.success { color:green; }
+.error { color:red; }
+</style>
 </head>
 <body>
 <div class="container">
     <h1>Consulta de Cargos</h1>
+
+    <?php if ($message) echo $message; ?>
+    <?php if (isset($_GET['status']) && $_GET['status']=='edit_ok'): ?>
+        <p class="message success">✅ Cargo atualizado com sucesso!</p>
+    <?php endif; ?>
 
     <form method="get" class="filtros">
         <input type="text" name="pesquisa" placeholder="Buscar cargo" value="<?=htmlspecialchars($pesquisa)?>">
