@@ -82,13 +82,9 @@ Faça login com as credenciais definidas no banco.
 
 ══════════════════════════════════════════════════════════════════════════════
 
-Solução de Problemas Comuns
+Solução de Problemas Comuns:
 
-Problema
-
-Possível Causa
-
-Solução
+Possível Causa & Solução:
 
 Erro de conexão com o banco
 
