@@ -1,0 +1,112 @@
+
+Curso: 2º MTEC PI DS
+Turma: A
+Professor: Fabiano Sinhorelli Damasceno
+Aluno(s): Cassiano, Daniel, André e João Henrique
+Data: 24/08/2025
+
+SISTEMA AUXILIAR EMPRESARIAL
+1. Introdução
+O objetivo do nosso projeto é desenvolver um Sistema de Auxílio Empresarial que centralize e facilite o gerenciamento de informações essenciais, como cadastro de funcionários, cargos, consultas e atualização de dados.
+A proposta consiste em oferecer uma solução prática, intuitiva e acessível, que auxilie as pequenas empresas a manterem um controle mais eficiente de seus processos internos. O sistema será limitado inicialmente à gestão de funcionários e cargos, garantindo simplicidade e funcionalidade, mas com possibilidade de expansão para outras áreas administrativas no futuro.
+Com isso, buscamos proporcionar maior organização, segurança dos dados e agilidade nos processos, contribuindo para que as empresas usuárias tenham apoio em sua rotina e consigam se manter firmes e competitivas no mercado.
+
+2. Levantamento de Requisitos 
+
+2.1 Requisitos Funcionais
+[RF001] CRUD Funcionários 
+O sistema deve permitir o cadastro de novos funcionários com dados como nome, CPF, cargo, salário, data de admissão etc, a alteração desses dados e a exclusão de um funcionário já existente.
+[RF002] CRUD Cargos
+O sistema deve possibilitar o cadastro de novos cargos, incluindo nome do cargo, salário base e descrição. O sistema também não cadastra cargos com nomes idênticos, sendo assim uma mensagem de erro aparecerá caso isso aconteça, o sistema também deve permitir a edição de dados desses cargos e a exclusão de cargos.  
+[RF003] Associação Funcionário–Cargo
+O sistema deve permitir vincular cada funcionário a um cargo.
+[RF004] Atribuição de Cargas Horárias Máximas para cada Cargo
+O sistema não deve permitir que a carga horária proposta exceda o valor determinado na modelagem do banco 
+
+
+2.2 Requisitos Não Funcionais
+[RNF001] Usabilidade
+O sistema deve ter uma interface clara e fácil de entender, permitindo que qualquer usuário consiga utilizá-lo sem dificuldades.
+[RNF002] Disponibilidade
+O sistema deve permanecer acessível e em pleno funcionamento durante o horário comercial, com o mínimo possível de interrupções.
+[RNF003] Portabilidade
+O sistema deve ser compatível com os principais navegadores, como Google Chrome, Microsoft Edge e Mozilla Firefox.
+[RNF004] Manutenibilidade
+O sistema deve ter um código organizado e estruturado, facilitando futuras atualizações ou correções.
+[RNF005] Confiabilidade
+O sistema deve apresentar alta confiabilidade, garantindo funcionamento estável e seguro em todas as suas funcionalidades críticas. Para isso, deve preservar a integridade dos dados, resistir a falhas técnicas e responder corretamente mesmo em situações de uso intenso. Além disso, deverão ser adotadas práticas de prevenção, como validação de informações, testes de desempenho e mecanismos de recuperação em caso de erros, assegurando assim maior confiança por parte dos usuários.
+3. Análise do Projeto
+O sistema foi desenvolvido com o propósito de facilitar a gestão de funcionários e cargos dentro de uma empresa. Ele centraliza em uma única plataforma os cadastros, consultas e atualizações, garantindo organização, segurança dos dados e agilidade nos processos administrativos.
+ 
+Modelagem do Banco de Dados:
+ 
+Foi utilizado um banco relacional MySQL.
+As tabelas principais são:
+cargos (id_cargo, nome_cargo, descricao, salario_base, carga_horaria_max)
+funcionarios (id_funcionario, nome_funcionario, cpf, id_cargo, salario, data_admissao)
+A relação é 1 cargo → N funcionários, garantindo integridade referencial com foreign keys.
+ 
+4. Modelagem do Banco de Dados
+4.1 Modelo Conceitual (DER)
+4.2 Modelo Lógico
+
+
+
+4.3 Modelo Físico
+Modelo físico pode ser acessado na pasta do projeto SAE por meio deste link:
+bd_sae.sql
+
+
+5. implementação
+
+Para a utilização desse sistema acesse o link do repositório do projeto no GitHub através desse link:
+https://github.com/cassianooliveira27/SAE---Sistema-de-Aux-lio-Empresarial
+
+
+
+
+Na página de Cadastro de Funcionários, é onde usuário realiza o registro de novos funcionários no sistema. Os campos obrigatórios incluem nome, CPF, cargo e data de admissão. Após a escolha do cargo, informações como salário e carga horária máxima são preenchidas de acordo com os dados previamente definidos para aquele cargo. Ao finalizar o preenchimento, o usuário deve clicar no botão Cadastrar-se, e o funcionário será adicionado ao banco de dados. Essa automatização reduz erros manuais e garante consistência entre os registros.
+
+
+
+
+No Cadastro de Cargos é onde o usuário realiza o cadastro dos cargos de uma empresa,
+No campo Nome Do Cargo, o usuário vai colocar o cargo que ele deseja cadastrar.
+No campo Descrição é onde o usuário pode descrever a função desse cargo.
+No campo Salário Base, o usuário pode inserir o salário definido para o cargo que vai ser cadastrado.E no campo: carga horaria máxima (horas) é onde o usuário coloca o tempo máximo de horas em que o cargo que for inserido deve cumprir.
+
+
+ 
+A página de Consulta de Funcionários é onde o usuário pode consultar os funcionários já registrados, para facilitar a consulta o usuário pode realizar buscas por nome do funcionário, por cargo, salário-mínimo e salário máximo, nessa tela também pode ser feita a edição dos dados ou a exclusão de um funcionário já cadastrado.
+
+
+
+Na página de Consulta de Cargos, o usuário pode consultar todos os cargos já cadastrados no sistema, com a possibilidade de realizar buscas pelo nome do cargo. Além disso, é possível editar as informações dos cargos existentes ou, se necessário, excluí-los.
+
+
+
+6. Considerações Finais
+O desenvolvimento do sistema de auxílio empresarial, voltado ao cadastro e administração de funcionários e cargos, demonstrou ser uma solução eficaz para a organização dos processos internos das empresas. A centralização das informações em um único banco de dados garante maior confiabilidade, reduz a ocorrência de erros manuais e proporciona mais agilidade no acesso e na atualização dos registros.
+Outro aspecto relevante é a escalabilidade do projeto. Sua arquitetura foi planejada para permitir futuras expansões, como a integração de módulos de folha de pagamento, controle de férias e geração de relatórios gerenciais. Dessa forma, o sistema não apenas atende às necessidades atuais das empresas, mas também oferece flexibilidade para acompanhar seu crescimento, reforçando seu caráter estratégico no apoio à gestão.
+
+
+Desafios e Erros Durante o Desenvolvimento
+Durante o desenvolvimento do SAE (Sistema Auxiliar Empresarial), alguns desafios foram identificados e superados ao longo da implementação, contribuindo para o amadurecimento do projeto e para a consolidação de uma solução mais estável e eficiente.
+Problemas de Conexão com o Banco de Dados:
+ Um dos principais problemas enfrentados foi a configuração das conexões com o banco de dados. Em determinados momentos, credenciais e permissões de acesso estavam incorretamente ajustadas, ocasionando falhas na autenticação. Além disso, parâmetros como host, porta e driver de conexão precisaram ser revisados para garantir a comunicação estável entre a aplicação e o servidor. A solução encontrada envolveu a revisão minuciosa do arquivo de configuração, a correção da string de conexão e a verificação da disponibilidade do servidor para conexões externas. Essas medidas asseguraram maior robustez na integração entre o sistema e o banco de dados.
+
+Problemas na Implementação do CSS:
+ Outro ponto de dificuldade foi a implementação do código CSS na página. As combinações iniciais não apresentavam contraste adequado, o que prejudicava a leitura e a usabilidade de elementos como botões, containers, tabelas e textos. Para solucionar esse problema, foram realizados testes de contraste e ajustes progressivos até a definição de uma paleta mais harmônica e funcional. Optou-se por tons de azul como cor principal, aliados a cores complementares para sinalização de feedbacks visuais. Para garantir uma interface mais agradável, intuitiva e acessível, em conformidade com boas práticas de design responsivo e de acessibilidade.
+Em síntese, os desafios enfrentados ao longo do processo de desenvolvimento serviram como oportunidades de aprendizado e aperfeiçoamento. Como resultado, o SAE se apresenta como uma ferramenta prática, organizada e confiável, capaz de apoiar de forma efetiva a gestão de funcionários e cargos dentro de pequenas empresas, cumprindo plenamente os objetivos estabelecidos no início do projeto.
+
+
+7. Referências do Projeto:
+1. PHP Documentation Group. PHP Manual: Funções MySQLi. Disponível em: https://www.php.net/manual/pt_BR/book.mysqli.php.
+
+2. MYSQL. MySQL 8.0 Reference Manual. Oracle Corporation, 2025. Disponível em: https://dev.mysql.com/doc/. 
+
+3. MOZILLA DEVELOPER NETWORK (MDN). Elemento <input> – HTML: Living Standard. Disponível em: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/input. .
+
+https://ui.glass/generator/
+
+
